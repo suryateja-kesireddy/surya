@@ -1,0 +1,182 @@
+const mainDiv=document.getElementById('main')
+const movies=[
+    {
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfbGfDu0QMcHVaCw_bV1j_F_nSklhjiIArSA&s",
+        year:"1996",
+      share:"1.5cr",
+        verdict:"Below Average",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/0/06/Gokulamlo_Seeta.jpg",
+        year:"1997",
+        share:"2.5cr",
+        verdict:"Hit",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/a/ab/Suswagatham.jpg",
+        year:"1998",
+        share:"8.5cr",
+        verdict:"Blockbuster",
+    },
+    {
+        image:"https://in.bmscdn.com/events/moviecard/ET00362883.jpg",
+        year:"1998",
+        share:"8.5cr",
+        verdict:"Blockbuster",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BNTY3MjM0ZWItOGRlYy00Y2Y4LTkxNWYtOWVkYWFjODNjNTRjXkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_.jpg",
+        year:"1999",
+        share:"9.25cr",
+        verdict:"Blockbuster",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/3/30/Badri_Telugu.jpg",
+        year:"2000",
+        share:"11.75cr",
+        verdict:"Super Hit",
+    },
+    {
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0ZlPFMmp6Xa5hwxn7cczqMjbwkjMsxDpMww&s",
+        year:"2001",
+        share:"21.25cr",
+        verdict:"Blockbuster",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BMGFkYmM4NjktZTM2MC00MDZhLTk3MTgtMTNjNWUyZWMxYzc4XkEyXkFqcGdeQXVyNDY5MTUyNjU@._V1_.jpg",
+        year:"2003",
+        share:"8.5cr",
+        verdict:"Disaster",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/3/3d/Gudumba.jpg",
+        year:"2003",
+        share:"11cr",
+        verdict:"Flop",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/3/3f/Balu2.jpg",
+        year:"2005",
+        share:"13.5cr",
+        verdict:"Below Average",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BYWNjNWJhNzMtYThjNS00MWQ3LTgzODMtMDNiZmNmMTExZTE4XkEyXkFqcGdeQXVyNjQ1MDcxNzM@._V1_.jpg",
+        year:"2006",
+        share:"14.8cr",
+        verdict:"Flop",
+        audio:"",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BMjY3OTA1NDAtM2E3YS00ODc5LWE5NGYtYzQ3YjMyMTRlZGNjXkEyXkFqcGdeQXVyNjU2OTQ4MDE@._V1_.jpg",
+        year:2006,
+        share:"16.9cr",
+        verdict:"Average",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BMzBhNDk0ZTgtYTI5My00MGU2LWEzNDAtOGRhMTk3ZDdjMjE0XkEyXkFqcGdeQXVyNjQ1MDcxNzM@._V1_FMjpg_UX1000_.jpg",
+        year:"2008",
+        share:"29.1cr",
+        verdict:"Super Hit",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/1/1b/Puliposter.jpg",
+        year:"2010",
+        share:"19.6cr",
+        verdict:"Disaster",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/4/42/Teen_Maar.jpg",
+        year:"2011",
+        share:"17.2cr",
+        verdict:"Disaster",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BMjEwNjY4OTQwOF5BMl5BanBnXkFtZTcwMjU3ODk5Ng@@._V1_.jpg",
+        year:"2011",
+        share:"18.5cr",
+        verdict:"Flop",
+    },
+    {
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8M9GyzUzOVAuhAqLlOvrr1-xIc7puvH6Erg&s",
+        year:"2012",
+        share:"60.5cr",
+        verdict:"Blockbuster",
+        audio:"https://res.cloudinary.com/dwduryahi/video/upload/v1723805246/iSongs.info_01_-_Dekho_Dekho_Gabbar_Singh_uj2pgc.mp3",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BMTM4ZTMwY2EtMzQyNC00ZTc4LTk0OWUtNDE2ZjFlNTU4ZGI1XkEyXkFqcGdeQXVyNjkwOTg4MTA@._V1_.jpg",
+        year:"2012",
+        share:"35.9cr",
+        verdict:"Below Average",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BZWQzNDdmN2UtZTc5ZC00M2EzLWE2ZTUtMjVhNzJmOGQ5YzkwXkEyXkFqcGdeQXVyMzA0NTI2OTM@._V1_.jpg",
+        year:"2013",
+        share:"75.4cr",
+        verdict:"Industry Hit",
+    },
+    {
+        image:"https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gopala-gopala-et00025038-11-12-2020-03-24-59.jpg",
+        year:"2015",
+        share:"41.2cr",
+        verdict:"Above Average",
+    },
+    {
+        image:"https://m.media-amazon.com/images/S/pv-target-images/a8945b63421da65fb3980c09784f6a3d8862c3e685b13a2943273c05ee81bd4d.jpg",
+        year:"2016",
+        share:"53.7cr",
+        verdict:"flop",
+    },
+    {
+        image:"https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/katamarayudu-et00046031-04-09-2016-01-42-32.jpg",
+        year:"2017",
+        share:"62.3cr",
+        verdict:"Flop",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BZmY5YmQ0YjgtZTA0NC00MTRhLWFiMmMtNjBhMjA3YmQwNThiXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg",
+        year:"2018",
+        share:"58.6cr",
+        verdict:"Disaster",
+    },  
+    {
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9RbdEhTBo-krjzo-AT8k-yKMms4I5vsfu8Q&s",
+        year:"2021",
+        share:"76.9cr",
+        verdict:"average",
+    },
+    {
+        image:"https://m.media-amazon.com/images/M/MV5BZmFmOTliOTQtOTBjYy00YWM3LTk2NmMtZjMyOTNhYjEyNTdhXkEyXkFqcGdeQXVyMTI1NDAzMzM0._V1_.jpg",
+        year:"2022",
+        share:"87.7cr",
+        verdict:"Average",
+    },
+    {
+        image:"https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Bro_Teaser.png/220px-Bro_Teaser.png",
+        year:"2023",
+        share:"59.7cr",
+        verdict:"Flop",
+    },
+]
+movies.forEach(function(m)
+{
+    const div =document.createElement('div')
+     div.classList.add('movies')
+    const image=document.createElement('img')
+        image.src=m.image
+        const audio=document.createElement('audio')
+        audio.setAttribute("controls","true")
+        const source=document.createElement('source')
+        source.src=m.audio
+    const yar=document.createElement('h4')    
+        yar.textContent=m.year
+        const share=document.createElement('h4')
+        share.textContent=m.share
+        const title=document.createElement('h2')
+        title.textContent=m.verdict
+        audio.append(source)
+        div.append(image,title,yar,share)
+        mainDiv.appendChild(div)
+    
+})
