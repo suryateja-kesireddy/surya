@@ -1,0 +1,39 @@
+#main{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.movies img{
+    height: 200px;
+    width: auto;
+    margin-left: 60px;
+
+}
+h1{
+    text-align: center;
+
+}
+body{
+    background-color:grey;
+    margin: 10px;
+}
+h2{
+    color:lightblue;
+    font-style: italic;
+    margin-left: 60px;
+
+}
+h4{
+    color: greenyellow;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 60px;
+}
+.movies audio{
+    margin-left: 20px;
+    border-radius: 10px;
+    color: black;
+    size-adjust: 10px;
+
+}
+image:hover{
+    zoom: 10px;
+}
